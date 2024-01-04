@@ -1,5 +1,5 @@
 ---
-title: "WSLを捨て、Windows上でAstroの環境構築をする"
+title: "WSLを捨て、\Windows上でAstroの環境構築をする"
 emoji: "😩"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["windows", "fnm", "pnpm", "github", "nodejs"]
@@ -314,7 +314,7 @@ published: true
   ### subkeyの作成  
 
   ```sh: PowerShell
-  PS C:\Users\taiko> gpg --edit-key ABCDEFG
+  > gpg --edit-key ABCDEFG
 
   gpg (GnuPG) 2.4.3; Copyright (C) 2023 g10 Code GmbH
   This is free software: you are free to change and redistribute it.
@@ -393,7 +393,7 @@ published: true
 
   ### GPG鍵の登録  
 
-  ```ssh: PowerShell
+  ```sh: PowerShell
   gpg --armor --export HIJKLMN
   ```  
   HIJKLMNの識別子は`git config --global user.signingkey`で指定した鍵と同じ鍵の識別子を指定します。出力された全文をコピーし、[SSH and GPG keys](https://github.com/settings/keys)の「New GPG Key」を押下し、**Title**には任意の名前、**Key**にはコピーした内容を貼り付けてください。最後に「Add GPG key」を押下してGPG鍵を追加できます。  
