@@ -1,9 +1,9 @@
 ---
-title: "WindowsでAstroの環境構築"
-emoji: "📝"
+title: "WSLを捨て、Windows上でAstroの環境構築をする"
+emoji: "😩"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["windows", "fnm", "pnpm", "github", "nodejs"]
-published: false
+published: true
 ---
 
 
@@ -38,7 +38,7 @@ published: false
 [winget]: https://learn.microsoft.com/ja-jp/windows/package-manager/winget/  
 [winget-ui]: https://github.com/marticliment/WingetUI  
 [cargo]: https://doc.rust-jp.rs/book-ja/ch01-03-hello-cargo.html  
-## fnmのインストールについて  
+## [fnm][fnm]のインストールについて  
 
   ### Windowsのパッケージマネージャー  
 
@@ -50,11 +50,11 @@ published: false
 
 
 [visual-studio]: https://visualstudio.microsoft.com/ja/  
-## Rustのインストール  
+## [Rust][Rust]のインストール  
 
   ### [Visual Studio][visual-studio]のインストール  
 
-  Rustでコンパイルする際には[Visual Studio][visual-studio]が必要です。要件が2017以上なので、現時点で最新の2022をインストールします。  
+  [Rust][rust]でコンパイルする際には[Visual Studio][visual-studio]が必要です。要件が2017以上なので、現時点で最新の2022をインストールします。  
 
   ```sh: PowerShell
   >winget search "Visual Studio"
@@ -78,7 +78,9 @@ published: false
 
 
 [code-name]: https://nodejs.org/en/about/previous-releases  
-## fnmのインストール  
+## [fnm][fnm]のインストール  
+
+  https://github.com/Schniz/fnm  
 
   ```sh: PowerShell
   cargo install fnm
@@ -89,17 +91,33 @@ published: false
   fnm install lts/hydrogen
   fnm use lts/hydrogen
   ```  
-  [fnm][fnm]は[コードネーム][code-name]でのインストールが可能です。  
+  [fnm][fnm]は **[コードネーム][code-name]でのインストール**が可能です。  
+  また、以下の記事も参考にしてみて下さい。  
+
+  - **Winget**  
+    - [Qiita - WindowsでのNode.jsのバージョン管理](https://qiita.com/mkt1234/items/00ffcbc14931819a7dde)  
+  - **Chocolatey**  
+    - [Qiita - 📗 Node.jsバージョン管理ツール「fnm」のインストール方法と使い方](https://qiita.com/heppokofrontend/items/fe1c3bc41a0ae943c2ca)  
+    - [Qiita - fnm (Fast Node Manager) のインストール方法と使い方](https://qiita.com/taqumo/items/b25d486e6ead9f38a13d)  
+    - [Zenn - fnm（Fast Node Manager）の導入方法](https://zenn.dev/kazuma_r5/articles/cd5eaf3d8b5b9f)  
+  - **Scoop**  
+    - [Zenn - Windows での Node.js バージョン管理を fnm で](https://zenn.dev/yokoyamark/articles/ef7ff2d55f5158)  
+
+  以下はコマンドの一覧です。  
 
   https://github.com/Schniz/fnm/blob/master/docs/commands.md  
 
 
-## pnpmのインストール  
+## [pnpm][pnpm]のインストール  
+
+  https://github.com/pnpm/pnpm
 
   ```sh: PowerShell
   winget install pnpm
   ```  
   設定は自動で行われます。**ターミナルを再起動**して設定を適用できます。  
+
+  https://pnpm.io/ja/motivation  
 
 
 [rsa]: https://ja.wikipedia.org/wiki/RSA%E6%9A%97%E5%8F%B7  
@@ -126,6 +144,7 @@ published: false
 
   https://github.com/settings/emails  
 
+  #### メールアドレス確認画面  
   ![emails](/images/articles/show-emails.png)  
 
   SSH接続にはメールアドレスが必要なのですが、**Primary email address**の説明の中で、`12345678+github@users.noreply.github.com`のようなメールアドレスがあります。これを使うのが一般的です。  
@@ -187,9 +206,13 @@ published: false
   ```  
   `cat`コマンドで出力された全文をコピーし、[SSH and GPG keys](https://github.com/settings/keys)の「New SSH Key」を押下し、**Title**には任意の名前、**Key**にはコピーした内容を貼り付けてください。最後に「Add SSH key」を押下してSSHを追加できます。  
 
+  #### 鍵の追加画面  
   ![add-key](/images/articles/add-key.png)  
+
+  #### SSH鍵の登録画面  
   ![add-ssh-key](/images/articles/add-ssh-key.png)  
 
+  GitHub公式がドキュメントを公開しているので、こちらもご参照下さい。  
   https://docs.github.com/ja/authentication/connecting-to-github-with-ssh  
 
   ### GPG鍵の作成  
@@ -375,9 +398,13 @@ published: false
   ```  
   HIJKLMNの識別子は`git config --global user.signingkey`で指定した鍵と同じ鍵の識別子を指定します。出力された全文をコピーし、[SSH and GPG keys](https://github.com/settings/keys)の「New GPG Key」を押下し、**Title**には任意の名前、**Key**にはコピーした内容を貼り付けてください。最後に「Add GPG key」を押下してGPG鍵を追加できます。  
 
+  #### 鍵の追加画面  
   ![add-key](/images/articles/add-key.png)  
+
+  #### GPG鍵の登録画面  
   ![add-gpg-key](/images/articles/add-gpg-key.png)  
 
+  こちらもGitHub公式がドキュメントを公開しているので、こちらもご参照下さい。  
   https://docs.github.com/ja/authentication/managing-commit-signature-verification/generating-a-new-gpg-key  
 
 
