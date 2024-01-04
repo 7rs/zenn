@@ -4,7 +4,6 @@ emoji: "📝"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["windows", "fnm", "pnpm", "github", "nodejs"]
 published: false
-slug: "dev-with-astro-on-win"
 ---
 
 
@@ -38,20 +37,22 @@ slug: "dev-with-astro-on-win"
 [scoop]: https://scoop.sh/  
 [winget]: https://learn.microsoft.com/ja-jp/windows/package-manager/winget/  
 [winget-ui]: https://github.com/marticliment/WingetUI  
-## Winget  
+[cargo]: https://doc.rust-jp.rs/book-ja/ch01-03-hello-cargo.html  
+## fnmのインストールについて  
 
   ### Windowsのパッケージマネージャー  
+
   [Chocolatey][chocolatey]や[Scoop][scoop]がありますが、私は[Winget][winget]を使います。非公式の[フロントエンド][winget-ui]もあります。この[WingetUI][winget-ui]は[Chocolatey][chocolatey]と[Scoop][scoop]を含む複数のパッケージマネージャーに対応しています。  
 
-
-[cargo]: https://doc.rust-jp.rs/book-ja/ch01-03-hello-cargo.html  
-## Cargo  
+  ### Cargoを使うことにした  
 
   [winget][winget]で[fnm][fnm]をインストールしようと思いましたが、上手くいかなかったので[cargo][cargo]を使いました。なので、[Rust][rust]の環境を構築します。  
 
 
 [visual-studio]: https://visualstudio.microsoft.com/ja/  
-## [Visual Studio][visual-studio]  
+## Rustのインストール  
+
+  ### [Visual Studio][visual-studio]のインストール  
 
   Rustでコンパイルする際には[Visual Studio][visual-studio]が必要です。要件が2017以上なので、現時点で最新の2022をインストールします。  
 
@@ -68,8 +69,7 @@ slug: "dev-with-astro-on-win"
   そして、[Visual Studio][visual-studio]をインストールする際に**Visual Studio Installer**が立ち上がりますが、自動で閉じられた場合はもう一度開きます。**Visual Studio Community 2022**がインストール済みとして表示されている項目の右端にある「変更」を押下します。
   「**ワークロード**」のブラウズ画面で「**デスクトップとモバイル**」→「**C++によるデスクトップ開発**」を選択し、下の「**ダウンロードしながらインストール**」を押下します。すると、インストールが始まるはずです。  
 
-
-## Rustup & Cargo  
+  ### Rustup (Cargo)のインストール  
 
   **rustup**は１つしか無いです。[Visual Studio][visual-studio]より先にインストールしてもエラーは出ませんが、ここでは **[Visual Studio][visual-studio]を先にインストールすることを推奨します。** また、ビルドツールの設定が上手くいかない場合があるみたいです。
 
@@ -78,7 +78,7 @@ slug: "dev-with-astro-on-win"
 
 
 [code-name]: https://nodejs.org/en/about/previous-releases  
-## fnm
+## fnmのインストール  
 
   ```sh: PowerShell
   cargo install fnm
@@ -94,7 +94,7 @@ slug: "dev-with-astro-on-win"
   https://github.com/Schniz/fnm/blob/master/docs/commands.md  
 
 
-## pnpm  
+## pnpmのインストール  
 
   ```sh: PowerShell
   winget install pnpm
@@ -102,7 +102,11 @@ slug: "dev-with-astro-on-win"
   設定は自動で行われます。**ターミナルを再起動**して設定を適用できます。  
 
 
-## Git
+[rsa]: https://ja.wikipedia.org/wiki/RSA%E6%9A%97%E5%8F%B7  
+[ed25519]: https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%89%E3%83%AF%E3%83%BC%E3%82%BA%E6%9B%B2%E7%B7%9A%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E7%BD%B2%E5%90%8D%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0#Ed25519  
+## GitとGitHubの設定  
+
+  ### Gitのインストール  
 
   :::message  
   既にインストールしている場合は不要です。
@@ -114,10 +118,7 @@ slug: "dev-with-astro-on-win"
 
   Gitも[Winget][winget]でインストールできます。  
 
-
-[rsa]: https://ja.wikipedia.org/wiki/RSA%E6%9A%97%E5%8F%B7  
-[ed25519]: https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%89%E3%83%AF%E3%83%BC%E3%82%BA%E6%9B%B2%E7%B7%9A%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E7%BD%B2%E5%90%8D%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0#Ed25519  
-## SSH接続  
+  ### メールアドレスの確認  
 
   :::message  
   既に設定済みの場合や、リポジトリのクローンをHTTPSで行う場合は不要です。
@@ -129,6 +130,7 @@ slug: "dev-with-astro-on-win"
 
   SSH接続にはメールアドレスが必要なのですが、**Primary email address**の説明の中で、`12345678+github@users.noreply.github.com`のようなメールアドレスがあります。これを使うのが一般的です。  
 
+  ### SSH・GitHubの認証の設定  
 
   ```: ./ssh/config
   Host github github.com
@@ -140,6 +142,8 @@ slug: "dev-with-astro-on-win"
     UseKeychain yes
   ```  
   後から作ってもエラーにはなりません。変更可能です。  `IgnoreUnknown`は`UseKeychain`よりも先に記述してください。`IdentityFile`が間違っているとエラーになります。このパスは後に指定します。  
+
+  ### SSH鍵の作成
 
   ```sh: PowerShell
   > mkdir .ssh
@@ -175,7 +179,7 @@ slug: "dev-with-astro-on-win"
   ```  
   SSHのキーを作成します。[RSA][rsa]もありますが、[ed25519][ed25519]を使用します。  
 
-  ### GitHubの設定  
+  ### SSH鍵の登録  
 
   ```sh: PowerShell
   > cat github.pub
@@ -188,8 +192,7 @@ slug: "dev-with-astro-on-win"
 
   https://docs.github.com/ja/authentication/connecting-to-github-with-ssh  
 
-
-## GPG鍵の作成  
+  ### GPG鍵の作成  
 
   :::message  
   既に設定済みの場合や、署名を求めない場合は不要です。
@@ -352,7 +355,7 @@ slug: "dev-with-astro-on-win"
   ```  
   `HIJKLMN`の場所にある鍵の識別子をコピーしておいてください。  
 
-  ### gitconfig  
+  ### Git・GPG鍵の設定  
 
   ```sh: PowerShell
   > git config --global user.signingkey HIJKLMN
@@ -365,7 +368,7 @@ slug: "dev-with-astro-on-win"
 
   一応、subkeyを作成しなくても`HIJKLMN`の部分を先ほどの`ABCDEFG`に置き換えることで署名できます。  
 
-  ### GitHubの設定  
+  ### GPG鍵の登録  
 
   ```ssh: PowerShell
   gpg --armor --export HIJKLMN

@@ -10,7 +10,6 @@ topics:
   - "ish"
 published: true
 published_at: "2022-07-30 04:39"
-slug: "ssh-and-gpg-in-github"
 ---
 
 :::message alert
