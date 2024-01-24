@@ -1,56 +1,32 @@
-<h1 align="center">
-  <a
-      href="https://zenn.dev/7rs"
-      title="zenn.dev/7rs"
-      hreflang="ja"
-      referrerpolicy="no-referrer"
-      rel="noopener noreferrer"
-  >Cbrnex's Zenn</a>
-</h1>
+[zenn]: https://zenn.dev/
 
-<p align="center">
-  <img 
-    src="https://img.shields.io/github/license/7rs/zenn?style=for-the-badge"
-    alt="A license badge"
-    decoding="async"
-    fetchpriority="low"
-    loading="lazy"
-  />
-  <img 
-    src="https://img.shields.io/github/package-json/dependency-version/7rs/zenn/zenn-cli?style=for-the-badge"
-    alt="A package version badge"
-    decoding="async"
-    fetchpriority="low"
-    loading="lazy"
-  />
-</p>
+# [Cbrnex's Zenn](https://zenn.dev/7rs)  
 
-<p align="center">
-  Zennデプロイ用のリポジトリです。更新に予定は無いですが、記事にご指摘・アドバイスがある場合は、Issueやコメントにてお願いします。また、その根拠やソースをご提示頂ければ幸いです。
-</p>
+  Zennのデプロイ用リポジトリです。  
 
-<br />
+[![License](https://img.shields.io/github/license/7rs/zenn?style=flat-square)](https://github.com/7rs/zenn/blob/main/LICENSE)
+[![zenn-cli](https://img.shields.io/github/package-json/dependency-version/7rs/zenn/zenn-cli?style=flat-square)](https://zenn.dev/zenn/articles/install-zenn-cli)
 
+## License  
 
-# How to read    
+  1. 私自身が作成・公開する **一次コンテンツ(記事の内容及びソースコード)** はご自由にお使い下さい。  
+  2. 私自身が作成していない **二次コンテンツ** は引用元をご参照下さい。  
+  3. 内容について、<u>正確性や信憑性は保証しません。</u>厳格な情報が求められる場合は調べた上で使用することを推奨します。  
 
-  記事は以下のリンクから閲覧できます。  
+[issue]: https://github.com/7rs/zenn/issues
 
-  > https://zenn.dev/7rs  
+## Contributing  
 
+  記事のご指摘・アドバイスは[Issue][issue]や投稿へのコメント、後述する[コミュニティ](#community)までお願いします。  
+  根拠をご提示頂ければ幸いです。また、原則として日本語を使用して下さい。  
+  記事の削除や訂正も同様に受け付けます。  
 
-# License  
+## Community  
 
-  1. 記事の内容及びソースコードはWTFPLの下、公開していますので私自身が作成し公開する一次コンテンツについてはご自由にお使い下さい。  
-  2. ただし、私自身が作成していない二次コンテンツについては引用元をご参照下さい。  
-  3. 記事の内容について、正確性や信憑性は保証致しません。厳格な情報が求められる場合は各自根拠を調べた上で取り扱って下さい。  
+### [Publication](https://zenn.dev/p/74)  
 
+  [Zenn][zenn]のIDを提示した上で、ご連絡頂ければ招待致します。  
 
-# Contributing  
+### [Discord](https://7rs.dev/d)  
 
-  冒頭の説明の通りです。他に何かあれば、  
-
-  - [Discord](https://7rs.dev/d)
-  - [Telegram](https://7rs.dev/t)
-
-  以上に送って頂ければ対応します。  
+  参加自由です。[Zenn][zenn]を始めとする技術的な話で無くても、お話し頂いて構いません。  

@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "editorconfig.editorconfig",
+        "usernamehw.errorlens",
+        "oderwat.indent-rainbow",
+        "bierner.markdown-emoji",
+        "zenn.zenn-preview",
+        "bierner.emojisense",
+        "davidanson.vscode-markdownlint"
+    ]
+}

@@ -1,15 +1,13 @@
 {
-  "name": "zenn",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "zenn-cli": "^0.1.150"
-  }
+    "name": "@7rs/zenn",
+    "version": "0.0.1",
+    "description": "Repository for deploying to zenn.dev",
+    "scripts": {},
+    "dependencies": {
+        "zenn-cli": "^0.1.150"
+    },
+    "license": "CC0-1.0",
+    "repository": "github:7rs/zenn",
+    "author": "Cbrnex <_@7rs.dev> (https://7rs.dev/)",
+    "keywords": ["zenn", "zenn.dev", "7rs", "Cbrnex", "markdown", "md", "tech"]
 }
