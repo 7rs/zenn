@@ -1,9 +1,10 @@
 ---
-title: "WSLを捨て、\Windows上でAstroの環境構築をする"
+title: "WSLを捨て、Windows上でAstroの環境構築をする"
 emoji: "😩"
-type: "tech" # tech: 技術記事 / idea: アイデア
+type: "tech"
 topics: ["windows", "fnm", "pnpm", "github", "nodejs"]
 published: true
+publication_name: "74"
 ---
 
 
